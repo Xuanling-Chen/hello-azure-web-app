@@ -1,5 +1,4 @@
-pipeline {
-    agent any
+node {
 
     stages {
         stage ('Checkout Stage') {
@@ -35,5 +34,5 @@ pipeline {
                     sourceDirectory: "target/hello-azure-web-app-0.0.1-SNAPSHOT.jar"
             }
         }
-    }
+
 }
