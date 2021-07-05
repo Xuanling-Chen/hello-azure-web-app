@@ -10,18 +10,18 @@ pipeline {
         stage ('Build Stage') {
 
             steps {
-                //withMaven(maven : 'maven3.8.1') {
+                withMaven{
                     sh 'mvn clean install'
-              //  }
+               }
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-               // withMaven(maven : 'maven3.8.1') {
+                withMaven{
                     sh 'mvn test'
-                //}
+                }
             }
         }
 
