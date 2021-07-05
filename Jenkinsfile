@@ -1,4 +1,5 @@
-node {
+pipeline {
+    agent any
 
     stages {
         stage ('Checkout Stage') {
@@ -9,16 +10,16 @@ node {
         stage ('Build Stage') {
 
             steps {
-                withMaven{
+                withMaven(maven : 'maven3.8.1') {
                     sh 'mvn clean install'
-               }
+                }
             }
         }
 
         stage ('Testing Stage') {
 
             steps {
-                withMaven{
+                withMaven(maven : 'maven3.8.1') {
                     sh 'mvn test'
                 }
             }
