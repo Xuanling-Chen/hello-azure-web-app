@@ -26,13 +26,21 @@ pipeline {
         }
 
         stage("Publish to Azure") {
-            steps {
+        /*     steps {
                 azureWebAppPublish appName: "hello-azure-web-app",
                     azureCredentialsId: "e90fad6f-fc64-42c2-ae47-d449285b98c2",
                     publishType: "file",
-                    filePath: "**/*.*",
+                    filePath: "** /* *//*.*",
                     resourceGroup: "jenkins-azure-rg",
                     sourceDirectory: "target/hello-azure-web-app-0.0.1-SNAPSHOT.jar"
+            } */
+            steps{
+            azureWebAppPublish
+                    azureCredentialsId: 'e90fad6f-fc64-42c2-ae47-d449285b98c2',
+                    resourceGroup: 'app-service-rg',
+                    appName: 'hello-azure-web-app',
+                    filePath: 'hello-azure-web-app-0.0.1-SNAPSHOT.jar',
+                    sourceDirectory: 'target'
             }
         }
     }
