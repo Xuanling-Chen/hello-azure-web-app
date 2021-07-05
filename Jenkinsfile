@@ -34,5 +34,5 @@ node {
                     sourceDirectory: "target/hello-azure-web-app-0.0.1-SNAPSHOT.jar"
             }
         }
-
+    }
 }
