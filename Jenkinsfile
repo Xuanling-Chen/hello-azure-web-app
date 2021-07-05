@@ -31,7 +31,7 @@ pipeline {
                                     sh '''
                                         cp hello-azure-web-app-0.0.1-SNAPSHOT.jar hello-azure-web-app.jar
                                         '''
-                                    zip 'hello-azure-web-app.zip' 'hello-azure-web-app.jar'
+                                    sh 'zip hello-azure-web-app.zip hello-azure-web-app.jar'
 
                                     azureWebAppPublish azureCredentialsId: 'e90fad6f-fc64-42c2-ae47-d449285b98c2',
                                             resourceGroup: 'app-service-rg',
