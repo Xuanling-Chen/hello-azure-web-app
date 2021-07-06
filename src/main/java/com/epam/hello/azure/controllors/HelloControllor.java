@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloControllor {
 
     @GetMapping("/hello")
-    public String sayHello(@RequestParam(value = "name",defaultValue = "world") String name){
-        return "Hello," + name;
+    public String sayHello(@RequestParam(value = "name",defaultValue = "azure") String name){
+        return "Hi" + name + " this is demo for jenkins and azure app service integration.";
     }
 
 }
