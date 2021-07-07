@@ -36,7 +36,7 @@ pipeline {
                 steps{
 
                     azureWebAppPublish azureCredentialsId: "82407b79-7755-4e97-aa2b-137eb00e020c",
-                          resourceGroup: "res_group",
+                          resourceGroup: "app-service-rg",
                           appName: "app-service-ins",
                           filePath: "hello-azure-web-app-0.0.1-SNAPSHOT.jar",
                           sourceDirectory: "target"
