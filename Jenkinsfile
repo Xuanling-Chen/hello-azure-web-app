@@ -1,6 +1,13 @@
 pipeline {
     agent any
-
+    parameters {
+        string(name: 'azure_cred_id', defaultValue: '82407b79-7755-4e97-aa2b-137eb00e020c',
+            description: 'azure credential')
+        string(name: 'res_group', defaultValue: 'res_group',
+                        description: 'resource group')
+        string(name: 'app-service-name', defaultValue: 'app-service-name',
+                                description: 'app-service-name')
+        }
     stages {
         stage ('Checkout Stage') {
             steps{
