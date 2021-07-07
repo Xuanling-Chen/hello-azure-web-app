@@ -28,9 +28,9 @@ pipeline {
         stage("Publish to Azure") {
                 steps{
 
-                    azureWebAppPublish azureCredentialsId: params.azure_cred_id,
-                          resourceGroup: params.res_group,
-                          appName: params.app-service-name,
+                    azureWebAppPublish azureCredentialsId: ${azure_cred_id},
+                          resourceGroup: ${res_group},
+                          appName: ${app-service-name},
                           filePath: "hello-azure-web-app-0.0.1-SNAPSHOT.jar",
                           sourceDirectory: "target"
 
