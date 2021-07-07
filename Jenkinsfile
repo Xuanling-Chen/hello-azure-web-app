@@ -30,7 +30,7 @@ pipeline {
 
                     azureWebAppPublish azureCredentialsId: params.azure_cred_id,
                           resourceGroup: params.res_group,
-                          appName: params.JenkinsIntegration,
+                          appName: params.app-service-name,
                           filePath: "hello-azure-web-app-0.0.1-SNAPSHOT.jar",
                           sourceDirectory: "target"
 
