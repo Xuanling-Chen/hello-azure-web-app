@@ -27,18 +27,12 @@ pipeline {
 
         stage("Publish to Azure") {
                 steps{
-                dir('target') {
-                                    sh '''
-                                        cp hello-azure-web-app-0.0.1-SNAPSHOT.jar hello-azure-web-app.jar
-                                        '''
-                                    sh 'zip hello-azure-web-app.zip hello-azure-web-app.jar'
 
-                                    azureWebAppPublish azureCredentialsId: "f27bd0e2-a7fa-413e-8c2c-193560d899b5",
-                                            resourceGroup: "app-service-rg",
-                                            appName: "hello-azure-web-app",
-                                            filePath: "hello-azure-web-app.zip",
-                                            sourceDirectory: "."
-                                }
+                    azureWebAppPublish azureCredentialsId: params.azure_cred_id,
+                          resourceGroup: params.res_group,
+                          appName: params.JenkinsIntegration,
+                          filePath: "hello-azure-web-app-0.0.1-SNAPSHOT.jar",
+                          sourceDirectory: "target"
 
 //                  azureWebAppPublish azureCredentialsId: "e90fad6f-fc64-42c2-ae47-d449285b98c2",
 //                     resourceGroup: "app-service-rg",
