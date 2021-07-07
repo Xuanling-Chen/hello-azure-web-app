@@ -49,5 +49,5 @@ jobs:
       with:
         app-name: 'app-service-ins'
         slot-name: 'production'
-        publish-profile: ${{ secrets.AzureAppService_PublishProfile_38960e9570274c8ebb418dded95ab633 }}
+        publish-profile: ${{ secrets.AzureAppService_PublishProfile_5e9d0054b48345e99ba25df032dc2aea }}
         package: '*.jar'
