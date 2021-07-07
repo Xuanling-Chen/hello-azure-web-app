@@ -1,13 +1,13 @@
 pipeline {
     agent any
-    parameters {
-        string(name: 'azure_cred_id', defaultValue: '82407b79-7755-4e97-aa2b-137eb00e020c',
-            description: 'azure credential')
-        string(name: 'res_group', defaultValue: 'res_group',
-                        description: 'resource group')
-        string(name: 'app-service-name', defaultValue: 'app-service-name',
-                                description: 'app-service-name')
-        }
+//     parameters {
+//         string(name: 'azure_cred_id', defaultValue: '82407b79-7755-4e97-aa2b-137eb00e020c',
+//             description: 'azure credential')
+//         string(name: 'res_group', defaultValue: 'res_group',
+//                         description: 'resource group')
+//         string(name: 'app-service-name', defaultValue: 'app-service-name',
+//                                 description: 'app-service-int')
+//         }
     stages {
         stage ('Checkout Stage') {
             steps{
@@ -35,9 +35,9 @@ pipeline {
         stage("Publish to Azure") {
                 steps{
 
-                    azureWebAppPublish azureCredentialsId: "${azure_cred_id}",
-                          resourceGroup: "${res_group}",
-                          appName: "${app-service-name}",
+                    azureWebAppPublish azureCredentialsId: "82407b79-7755-4e97-aa2b-137eb00e020c",
+                          resourceGroup: "res_group",
+                          appName: "app-service-ins",
                           filePath: "hello-azure-web-app-0.0.1-SNAPSHOT.jar",
                           sourceDirectory: "target"
 
